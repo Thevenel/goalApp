@@ -1,7 +1,9 @@
 // jshint esversion:6
 
 import {useState} from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { 
+  Button, StyleSheet, Text, TextInput, View, ScrollView
+ } from 'react-native';
 
 export default function App() {
   const [enteredGoalText, setEnteredGoalText] = useState('');
@@ -17,12 +19,11 @@ export default function App() {
     ]);
   }
 
-
   return (
     <View style={styles.appContainer}>
 
       <View style={styles.inputContainer}>
-        {/* <Text>My 2023 Goal</Text> */}
+        {/* { <Text>My 2023 Goal</Text> } */}
         <TextInput style={styles.textInput} placeholder='Enter a Goal' 
         onChangeText={goalInputHandler} 
         />
@@ -31,12 +32,13 @@ export default function App() {
       </View>
 
       <View style={styles.goalsContainer}>
+      <ScrollView>    
         { courseGoals.map((goal) => (
           <View key={goal} style={styles.goalItem}>
           <Text style={styles.goalText} >{goal}</Text> 
           </View>
-         
           ))}
+      </ScrollView>
       </View>
 
     </View>
