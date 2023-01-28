@@ -1,5 +1,5 @@
 // jshint esversion:6
-import {View, TextInput, Button, StyleSheet} from 'react-native';
+import {View, TextInput, Button, StyleSheet, Modal} from 'react-native';
 import { useState } from 'react';
 
 
@@ -15,15 +15,16 @@ function GoalInput(props) {
         setEnteredGoalText('');
     }
     return (
+        <Modal visible={props.showModal} animationType="slide">
         <View style={styles.inputContainer}>
         {/* { <Text>My 2023 Goal</Text> } */}
         <TextInput style={styles.textInput} placeholder='Enter a Goal' 
         onChangeText={goalInputHandler} 
-        value = {enteredGoalText}
-        />
+        value = {enteredGoalText}/>
         <Button title='Add goal' onPress={addGoalHandler}
         />
       </View>
+        </Modal>
     )
 }
 
