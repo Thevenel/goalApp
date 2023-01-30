@@ -26,7 +26,7 @@ function GoalInput(props) {
         <Button title='Add goal' onPress={addGoalHandler}/>
         </View>
         <View style={styles.button}>
-        <Button title='Cancel'/>
+        <Button title='Cancel' onPress={props.onCancel}/>
         </View>
         </View>
       </View>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         marginTop: 16
       },
     button: {
-        width: '%30',
+        width: '30%',
         marginHorizontal: 8,
     }
 });
