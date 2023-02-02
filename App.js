@@ -9,6 +9,7 @@ import {
 
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
+import { StatusBar } from 'expo-status-bar';
 
 
 export default function App() {
@@ -37,8 +38,10 @@ export default function App() {
   }
 
   return (
+    <>
+    <StatusBar style="light" />
     <View style={styles.appContainer}>
-      <Button title='Add New Goal' color='#5e0acc'
+      <Button title='Add New Goal' color='#945bdf'
         onPress={startAddGoalHandler}
       />
       <GoalInput showModal={modalIsVisible} 
@@ -61,6 +64,7 @@ export default function App() {
       </View>
 
     </View>
+    </>
   );
 }
 
@@ -69,6 +73,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingHorizontal: 16,
     flex: 1,
+    
   },
   
   goalsContainer: {
